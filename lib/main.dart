@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'RandomWords.dart';
+import 'MyAppBar.dart';
+import 'ShoppingListItem.dart';
+import 'ShoppingList.dart';
 
 void main() => runApp(new MyApp());
 
@@ -13,7 +16,13 @@ class MyApp extends StatelessWidget {
       theme: new ThemeData(
         primaryColor: Colors.white,
       ),
-      home: new RandomWords()
+      home: new ShoppingList(
+        products: <Product>[
+          new Product(name: 'Eggs'),
+          new Product(name: 'Flour'),
+          new Product(name: 'Chocolate chips'),
+        ],
+      ),
     );
   }
 }

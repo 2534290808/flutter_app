@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';
+import 'MyAppBar.dart';
 
 class RandomWords extends StatefulWidget {
   @override
@@ -20,46 +21,49 @@ class _RandomWordsState extends State<RandomWords> {
   @override
   Widget build(BuildContext context) {
 
-    void _pushSaved() {
-      Navigator.of(context).push(
-        new MaterialPageRoute(
-          builder: (context) {
-            final tiles = _saved.map(
-                  (pair) {
-                return new ListTile(
-                  title: new Text(
-                    pair.asPascalCase,
-                    style: _biggerFont,
-                  ),
-                );
-              },
-            );
-            final divided = ListTile
-                .divideTiles(
-              context: context,
-              tiles: tiles,
-            )
-                .toList();
-
-            return new Scaffold(
-              appBar: new AppBar(
-                title: new Text('Saved Suggestions'),
-              ),
-              body: new ListView(children: divided),
-            );
-          },
-        ),
-      );
-    }
+    return new MyScaffold();
     // TODO: implement build
     return new Scaffold (
-      appBar: new AppBar(
+      /*appBar: new AppBar(
         title: new Text('Startup Name Generator'),
         actions: <Widget>[
           new IconButton(icon: new Icon(Icons.list), onPressed: _pushSaved),
         ],
-      ),
+      ),*/
       body: _buildSuggestions(),
+      //appBar: new MyAppBar(),
+    );
+  }
+
+  void _pushSaved() {
+    Navigator.of(context).push(
+      new MaterialPageRoute(
+        builder: (context) {
+          final tiles = _saved.map(
+                (pair) {
+              return new ListTile(
+                title: new Text(
+                  pair.asPascalCase,
+                  style: _biggerFont,
+                ),
+              );
+            },
+          );
+          final divided = ListTile
+              .divideTiles(
+            context: context,
+            tiles: tiles,
+          )
+              .toList();
+
+          return new Scaffold(
+            appBar: new AppBar(
+              title: new Text('Saved Suggestions'),
+            ),
+            body: new ListView(children: divided),
+          );
+        },
+      ),
     );
   }
 
