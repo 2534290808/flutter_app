@@ -5,6 +5,9 @@ import 'ShoppingListItem.dart';
 import 'ShoppingList.dart';
 import 'HomeScreen.dart';
 import 'LogoApp.dart';
+import 'AnimatedLogo.dart';
+import 'AnimatedBuilderLogo.dart';
+import 'AnimatedLogo1.dart';
 
 void main() => runApp(new MyApp());
 
@@ -22,6 +25,9 @@ class MyApp extends StatelessWidget {
       routes: <String,WidgetBuilder>{
         '/container':(BuildContext context)=>new ContainerScreen(title: 'container',),
         '/logoApp':(BuildContext context)=>new LogoApp(),
+        '/animatedLogo':(BuildContext context)=>new AnimatedLogo(),
+        '/animatedbl':(BuildContext context)=>new AnimatedBuilderLogo(),
+        '/animatedLogo1':(BuildContext context)=>new AnimatedLogo1()
       },
     );
   }

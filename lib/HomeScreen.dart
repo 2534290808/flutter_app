@@ -11,7 +11,10 @@ class _RouteData {
 class HomeScreen extends StatelessWidget {
   final _routeData = <_RouteData>[
     new _RouteData(title: 'Container', path: '/container'),
-    new _RouteData(title: 'LogoApp',path: '/logoApp')
+    new _RouteData(title: 'LogoApp',path: '/logoApp'),
+    new _RouteData(title: 'AnimatedLogo',path:'/animatedLogo'),
+    new _RouteData(title: 'AnimatedLogo1',path: '/animatedLogo1'),
+    new _RouteData(title:'AnimatedBuilderLogo',path: '/animatedbl')
   ];
 
   /**
