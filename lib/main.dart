@@ -3,6 +3,8 @@ import 'RandomWords.dart';
 import 'MyAppBar.dart';
 import 'ShoppingListItem.dart';
 import 'ShoppingList.dart';
+import 'HomeScreen.dart';
+import 'LogoApp.dart';
 
 void main() => runApp(new MyApp());
 
@@ -16,13 +18,11 @@ class MyApp extends StatelessWidget {
       theme: new ThemeData(
         primaryColor: Colors.white,
       ),
-      home: new ShoppingList(
-        products: <Product>[
-          new Product(name: 'Eggs'),
-          new Product(name: 'Flour'),
-          new Product(name: 'Chocolate chips'),
-        ],
-      ),
+      home: new HomeScreen(),
+      routes: <String,WidgetBuilder>{
+        '/container':(BuildContext context)=>new ContainerScreen(title: 'container',),
+        '/logoApp':(BuildContext context)=>new LogoApp(),
+      },
     );
   }
 }
